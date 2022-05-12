@@ -1,0 +1,5 @@
+project(glfw3 LANGUAGES C)
+add_library(${PROJECT_NAME} INTERFACE)
+target_include_directories(${PROJECT_NAME} INTERFACE include)
+find_library(GLFW3_FOUND NAMES glfw3 HINTS lib-universal REQUIRED)
+target_link_libraries(${PROJECT_NAME} INTERFACE ${GLFW3_FOUND})
